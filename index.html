@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volumetric Clouds & PBR Ocean — Tech Demo</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #canvas-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    canvas {
+      display: block;
+    }
+    #info {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: rgba(255,255,255,0.9);
+      pointer-events: none;
+      z-index: 10;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    }
+    #info h1 {
+      margin: 0 0 6px 0;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    #info p {
+      margin: 0;
+      font-size: 12px;
+      opacity: 0.7;
+      max-width: 380px;
+      line-height: 1.4;
+    }
+    #stats {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      font-family: monospace;
+      pointer-events: none;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(8px);
+      line-height: 1.5;
+    }
+    .lil-gui {
+      --background-color: rgba(20,20,25,0.85);
+      --widget-color: rgba(60,60,70,0.8);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas-container">
+    <div id="info">
+      <h1>VOLUMETRIC CLOUDS × PBR OCEAN</h1>
+      <p>Real-time raymarched cumulus with dual-lobe HG phase & Beer's law • Gerstner FFT ocean with GGX PBR, Fresnel, foam & subsurface scattering • Atmospheric scattering sky</p>
+    </div>
+    <div id="stats">
+      <div id="fps">FPS: --</div>
+      <div>THREE r160 • WebGL2 • Raymarch 48 steps + 6 light steps</div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
